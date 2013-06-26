@@ -15,7 +15,7 @@ class DebugHtml {
 			return;
 		}
 
-		add_action( 'init', array( 'DebugHtml', 'enqueue_js' ) );
+		add_action( 'wp_enqueue_scripts', array( 'DebugHtml', 'enqueue_js' ) );
 		add_action( 'wp_footer', array( 'DebugHtml', 'run' ), 99 );
 	}
 
