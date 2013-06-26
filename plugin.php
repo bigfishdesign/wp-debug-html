@@ -3,7 +3,7 @@
 Plugin Name: Debug HTML
 Plugin URI: https://github.com/bigfishdesign/wp-debug-html
 Description: A WordPress wrapper for the HTML Inspector, that highlights bad markup in your plugins/themes
-Version: 1.0
+Version: 1.1
 Author: Rob Miller
 Author URI: http://bigfish.co.uk/
 License: MIT
