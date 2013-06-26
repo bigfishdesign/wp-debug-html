@@ -16,7 +16,7 @@ class DebugHtml {
 		}
 
 		add_action( 'wp_enqueue_scripts', array( 'DebugHtml', 'enqueue_js' ) );
-		add_action( 'wp_footer', array( 'DebugHtml', 'run' ), 99 );
+		add_action( 'wp_print_footer_scripts', array( 'DebugHtml', 'run' ), 99 );
 	}
 
 	public static function enqueue_js() {
