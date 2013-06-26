@@ -10,15 +10,16 @@ License: MIT
 */
 
 class DebugHtml {
-	public static function enqueue_js() {
+	public static function init() {
 		if ( !defined( 'WP_DEBUG' ) || !WP_DEBUG ) {
 			return;
 		}
 
-		if ( is_admin() ) {
-			return;
-		}
+		add_action( 'init', array( 'DebugHtml', 'enqueue_js' ) );
+		add_action( 'wp_footer', array( 'DebugHtml', 'run' ), 99 );
+	}
 
+	public static function enqueue_js() {
 		wp_enqueue_script( 'debug-html', plugins_url( 'js/html-inspector.js', __FILE__ ), array( 'jquery' ), '0.2.1', true );
 	}
 
@@ -31,5 +32,4 @@ class DebugHtml {
 	}
 }
 
-add_action( 'init', array( 'DebugHtml', 'enqueue_js' ) );
-add_action( 'wp_footer', array( 'DebugHtml', 'run' ), 99 );
+DebugHtml::init();
