@@ -20,7 +20,7 @@ class DebugHtml {
 	}
 
 	public static function enqueue_js() {
-		wp_enqueue_script( 'debug-html', plugins_url( 'js/html-inspector.js', __FILE__ ), array( 'jquery' ), '0.2.1', true );
+		wp_enqueue_script( apply_filters( 'wp_debug_html_script_filter', 'debug-html' ), plugins_url( 'js/html-inspector.js', __FILE__ ), array( 'jquery' ), '0.2.1', true );
 	}
 
 	public static function run() {
